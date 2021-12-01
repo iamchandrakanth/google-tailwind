@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Google UI</title>
+
+    <style>
+      .rotate-45 {
+          --transform-rotate: 45deg;
+          transform: rotate(45deg);
+      }
+  
+      .group:hover .group-hover\:flex {
+          display: flex;
+      }
+  </style>
 </head>
 <body>
     <div class="flex flex-col items-center justify-center h-screen font-sans">
@@ -40,9 +51,16 @@
             <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/search-256.png" class="h-5 ml-3 text-gray-500"/>
             <input type="text" class="flex-grow focus:outline-none" />
        
-            <div class="h-8 w-8">
+            <div class="h-8 w-8 group relative">
                 <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-25-256.png" alt="">
+
+                <div class="absolute bottom-0 flex flex-col items-center hidden mb-6 group-hover:flex">
+                  <span class="relative z-10 p-2 text-xs leading-none text-white bg-black shadow-lg px-5">Search by Voice</span>
+                  <div class="w-3 h-3 -mt-2 rotate-45 bg-black"></div>
+                </div>
             </div>
+
+            
             
           </div>
   
